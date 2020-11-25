@@ -1,6 +1,7 @@
 from django import forms
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
+from django.views.generic import ListView
 
 from dev_test.main.models import Order
 
@@ -46,14 +47,21 @@ def change(amount):
 
     denominations = [50, 20, 10, 5, 2, 1, .5, .2, .1, .05, .02, .01]
     changeReturned = {}
-    changeDue = amount
+    changeDue = float(amount)
+    print(changeDue)
     
     for i in denominations:
         if changeDue >= i:
             changeReturned[i] = changeDue // i
-            changeDue = changeDue - i
+            changeDue = changeDue % i
+            print(changeDue)
     
-    print(changeReturned)
+    # print(changeReturned)
     
     return(changeReturned)
+
+class ListOrders(ListView):
+    model = Order
+
+
     
