@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+  <div class="col-md-12">
+    <p>Order ID: {{ order.id }}</p>
+    <p>Amount Paid: {{ order.amount_paid }}</p>
+    <p>Change Denominations: {{ change }}</p>
+    {# You'll need to list the order's change, and any other relevant fields #}
+  </div>
+{% endblock %}

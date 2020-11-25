@@ -1,0 +1,9 @@
+.idea
+env/
+venv/
+.venv/
+.env/
+*.pyc
+.grablib.lock
+.coverage
+coverage.xml
